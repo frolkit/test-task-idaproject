@@ -33,5 +33,5 @@ python manage.py runserver
 ```
 7. Проект доступен по адресу 127:0.0.1:8000.
 
-## Генерация SECRET_KEY для settings.py.
+## Генерация SECRET_KEY.
   1. SECRET_KEY можно получить по [ссылке](https://djecrety.ir/).
