@@ -1,0 +1,7 @@
+<h1>Список изображений</h1>
+
+{% for instance in queryset %}
+    </p><a href="{% url 'image_edit' instance.id %}">{{ instance.image.name }}</a></p>
+{% endfor %}
+
+</p><a href="{% url 'image_create' %}">Добавить изображение</a></p>

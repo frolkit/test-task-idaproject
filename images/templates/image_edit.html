@@ -1,0 +1,11 @@
+<a href="{% url 'index' %}">Назад к списку</a>
+<h1>{{ image.name }}</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Отправить">
+</form>
+
+
+<img src="{{ image.url }}" alt="картинка" />
