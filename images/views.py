@@ -15,14 +15,14 @@ def image_create(request):
     form = ImageCreate(request.POST or None, files=request.FILES or None)
     if request.method == 'POST':
         if form.is_valid():
-            link = form.cleaned_data['image_link']
-            image = form.cleaned_data['image_file']
-            if link:
-                file_name = urlparse(link).path.split('/')[-1]
+            image_link = form.cleaned_data['image_link']
+            image_file = form.cleaned_data['image_file']
+            if image_link:
+                file_name = urlparse(image_link).path.split('/')[-1]
             else:
-                file_name = image.name
+                file_name = image_file.name
             instance = Image()
-            instance.image.save(file_name, image)
+            instance.image.save(file_name, image_file)
             return redirect("image_edit", id=instance.id)
     return render(request, 'image_create.html', {'form': form})
 
